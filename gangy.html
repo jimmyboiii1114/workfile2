@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebf0;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .hidden {
+            display: none;
+            font-size: 24px;
+            color: #d63384;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #ff4d6d;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .button:hover {
+            background-color: #d63384;
+        }
+        .soobin {
+            display: none; /* Hide images initially */
+            margin-top: 20px;
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HELLO ELLE! ❤️</h1>
+        <p>I've got a special question for you...</p>
+        <button class="button" onclick="showButtons()">Click Me</button>
+        <div id="question" class="hidden">
+            <p>Will you be my Valentine? 💖</p>
+            <button class="button" onclick="showSoobin('yes')">Yes</button>
+            <button class="button" onclick="showSoobin('no')">No</button>
+        </div>
+        <img id="soobin-smiling" class="soobin" src="https://i.pinimg.com/736x/2a/4c/2a/2a4c2a6ddbea20227c585783b621ab95.jpg" alt="TXT Soobin Smiling">
+        <img id="soobin-crying" class="soobin" src="https://i.pinimg.com/736x/49/64/6d/49646dbb3dbeaaac2000f8cb57fba606.jpg" alt="TXT Soobin Crying">
+    </div>
+    
+    <script>
+        function showButtons() {
+            document.getElementById("question").classList.remove("hidden");
+        }
+        function showSoobin(response) {
+            console.log("Response:", response); // Fixed console log syntax
+
+            if (response === 'yes') {
+                document.getElementById("soobin-smiling").style.display = "block";
+                document.getElementById("soobin-crying").style.display = "none";
+            } else {
+                document.getElementById("soobin-crying").style.display = "block";
+                document.getElementById("soobin-smiling").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
